@@ -32,3 +32,19 @@ function playRound(playerChoice, computerChoice) {
 function verifyAnswer(answer) {
     return (answer === "rock" || answer === "paper" || answer === "scissors");
 }
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let keepGoing = true;
+        let answer = "";
+        while(keepGoing) {
+            answer = prompt("What is your choice? (Rock, Paper, Scissors)").trim().toLowerCase();
+            if (verifyAnswer(answer)) {
+                keepGoing = false;
+            } else {
+                alert("Please, write one of the valid options");
+            }
+        }
+        console.log(playRound(answer, getComputerChoice()))
+    }
+}
