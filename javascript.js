@@ -23,28 +23,29 @@ function playRound(playerChoice, computerChoice) {
         return `You lost, ${computerChoice} beats ${playerChoice}.`;
     }
 }
+
 let playerScore = 0;
 let computerScore = 0;
 const playerScoreDisplay = document.querySelector("#playerScore");
-playerScoreDisplay.textContent = playerScore;
+playerScoreDisplay.textContent = `You: ${playerScore}`;
 const computerScoreDisplay = document.querySelector("#computerScore");
-computerScoreDisplay.textContent = computerScore;
+computerScoreDisplay.textContent = `Computer: ${computerScore}`;
 const result = document.querySelector("#result");
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
     result.textContent = playRound("rock", getComputerChoice());
-    playerScoreDisplay.textContent = playerScore;
-    computerScoreDisplay.textContent = computerScore;
+    playerScoreDisplay.textContent = `You: ${playerScore}`;
+    computerScoreDisplay.textContent = `Computer: ${computerScore}`;
 });
 const paper = document.querySelector("#paper");
 paper.addEventListener("click", () => {
     result.textContent = playRound("paper", getComputerChoice());
-    playerScoreDisplay.textContent = playerScore;
-    computerScoreDisplay.textContent = computerScore;
+    playerScoreDisplay.textContent = `You: ${playerScore}`;
+    computerScoreDisplay.textContent = `Computer: ${computerScore}`;
 });
 const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
     result.textContent = playRound("scissors", getComputerChoice());
-    playerScoreDisplay.textContent = playerScore;
-    computerScoreDisplay.textContent = computerScore;
+    playerScoreDisplay.textContent = `You: ${playerScore}`;
+    computerScoreDisplay.textContent = `Computer: ${computerScore}`;
 });
