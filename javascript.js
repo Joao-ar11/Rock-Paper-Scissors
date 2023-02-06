@@ -1,11 +1,3 @@
-const result = document.querySelector("#result");
-const rock = document.querySelector("#rock");
-rock.addEventListener("click", () => result.textContent = playRound("rock", getComputerChoice()));
-const paper = document.querySelector("#paper");
-paper.addEventListener("click", () => result.textContent = playRound("paper", getComputerChoice()));
-const scissors = document.querySelector("#scissors");
-scissors.addEventListener("click", () => result.textContent = playRound("scissors", getComputerChoice()));
-
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3) + 1;
     switch (computerChoice) {
@@ -34,18 +26,10 @@ function verifyAnswer(answer) {
     return (answer === "rock" || answer === "paper" || answer === "scissors");
 }
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        let keepGoing = true;
-        let answer = "";
-        while(keepGoing) {
-            answer = prompt("What is your choice? (Rock, Paper, Scissors)").trim().toLowerCase();
-            if (verifyAnswer(answer)) {
-                keepGoing = false;
-            } else {
-                alert("Please, write one of the valid options");
-            }
-        }
-        console.log(playRound(answer, getComputerChoice()))
-    }
-}
+const result = document.querySelector("#result");
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", () => result.textContent = playRound("rock", getComputerChoice()));
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => result.textContent = playRound("paper", getComputerChoice()));
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => result.textContent = playRound("scissors", getComputerChoice()));
