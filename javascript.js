@@ -1,9 +1,10 @@
+const result = document.querySelector("#result");
 const rock = document.querySelector("#rock");
-rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
+rock.addEventListener("click", () => result.textContent = playRound("rock", getComputerChoice()));
 const paper = document.querySelector("#paper");
-paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
+paper.addEventListener("click", () => result.textContent = playRound("paper", getComputerChoice()));
 const scissors = document.querySelector("#scissors");
-scissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
+scissors.addEventListener("click", () => result.textContent = playRound("scissors", getComputerChoice()));
 
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3) + 1;
@@ -21,11 +22,11 @@ function getComputerChoice() {
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
-        console.log("It's a tie!");
+        return "It's a tie!";
     } else if ((playerChoice === "rock" && computerChoice === "scissors") || (playerChoice === "paper" && computerChoice === "rock") || (playerChoice === "scissors" && computerChoice === "paper")) {
-        console.log(`You won, ${playerChoice} beats ${computerChoice}!`);
+        return `You won, ${playerChoice} beats ${computerChoice}!`;
     } else {
-        console.log(`You lost, ${computerChoice} beats ${playerChoice}.`);
+        return `You lost, ${computerChoice} beats ${playerChoice}.`;
     }
 }
 
