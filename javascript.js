@@ -22,10 +22,6 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-function verifyAnswer(answer) {
-    return (answer === "rock" || answer === "paper" || answer === "scissors");
-}
-
 const result = document.querySelector("#result");
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => result.textContent = playRound("rock", getComputerChoice()));
