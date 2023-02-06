@@ -1,0 +1,29 @@
+body {
+    background-color: #808080;
+    text-align: center;
+}
+
+img {
+    height: 295px;
+    width: 295px;
+}
+
+button {
+    background-color: #808080;
+    cursor: pointer;
+    border-width: 0px;
+    width: 300px;
+}
+
+#buttonContainer {
+    margin: 50px 0px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+#scissors img{
+    width: 200px;
+}
